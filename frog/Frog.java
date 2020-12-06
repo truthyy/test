@@ -17,28 +17,29 @@ public class Frog implements IFrog {
 
 	@Override
 	public Case getPosition() { //donne la position actuelle de la grenouille
+
 		return Position;
 	}
 
 	@Override
 	public Direction getDirection() {
+
 		return Direct; //donne direction actuelle de la grenouille
 	}
 
 	@Override
 	public void move(Direction key) { // on veut modifier la direction de la grenouille et mettre a jour la case
-		this.direction = key;
 
 	if ( key == Direction.down){
 			this.Position = new Case(Position.absc, Position.ord -1);
 	}
-	if ( key == Direction.up){
+	else if ( key == Direction.up){
 			this.Position = new Case(Position.absc, Position.ord +1);
 		}
-	if ( key == Direction.left){
+	else if ( key == Direction.left){
 			this.Position = new Case(Position.absc-1, Position.ord));
 		}
-	if ( key == Direction.right){
+	else if ( key == Direction.right){
 			this.Position = new Case(Position.absc+1, Position.ord));
 		}
 
